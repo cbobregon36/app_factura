@@ -1,0 +1,28 @@
+<ion-content>
+	<ion-card class="ion-no-margin">
+		<ion-img src="https://via.placeholder.com/300x200"></ion-img>
+		
+		<ion-card-content>
+			<ion-item>
+				<ion-icon name="mail-outline" class="ion-margin-end"></ion-icon>
+				<ion-input name="usernmae" type="text" [(ngModel)]="email" placeholder="usuario@mail.com"></ion-input>
+			</ion-item>
+			<ion-item class="ion-margin-top">
+				<ion-icon name="lock-closed-outline" class="ion-margin-end"></ion-icon>
+				<ion-input name="usernmae" type="password" [(ngModel)]="password" placeholder="*****"></ion-input>
+			</ion-item>
+			<div class="ion-margin-top">
+				<ion-button 
+					expand="block" 
+					fill="solid"
+					(click)="handleLogin()"
+				>
+					Ingresar
+				</ion-button>
+			</div>
+			<div class="ion-margin-top ion-text-center">
+				<span>¿No tienes cuenta? crea una cuenta aqui</span>
+			</div>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

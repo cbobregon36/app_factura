@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="dashboard/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Categorias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label></ion-label>
+      <ion-button [routerLink]="['/categorias_crear']">Nueva categoria</ion-button>
+    </ion-list-header>
+    <ion-item 
+        button 
+        *ngFor="let category of categories"
+        [routerLink]="['/categorias_editar', category.id]"
+      >
+      <ion-label>{{category.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

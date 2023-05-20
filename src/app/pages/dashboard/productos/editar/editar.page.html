@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="dashboard/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Listar Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="handleUpdateProduct()" [formGroup]="formUpdateProduct">
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre producto</ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Categoria</ion-label>
+      <ion-select formControlName="categoryId" aria-label="Tallas" interface="action-sheet" placeholder="Selecciona">
+        <ion-select-option 
+        *ngFor="let category of categories"
+        [value]="category.id"
+          >
+          {{category.name}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button 
+          type="submit" 
+          color="primary" 
+          expand="block"
+        >Actualizar producto</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  <ion-row>
+    <ion-col>
+      <ion-button 
+        color="danger" 
+        expand="block"
+        [routerLink]="['/agregar_caracteristica/', id]"
+      >
+        Agregar caracteristica
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-text>
+    <h2>
+      Caracteristicas del producto
+    </h2>
+  </ion-text>
+  <ion-list>
+    <ion-item 
+      href="productos_editar"
+        *ngFor="let feature of features"
+    >
+      <ion-label>Color: {{feature.color.name}} - Talla: {{feature.size.name}} - Stock: {{feature.stock}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

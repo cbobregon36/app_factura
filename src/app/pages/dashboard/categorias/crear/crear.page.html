@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="categorias_listar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nueva Categoria</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form (ngSubmit)="handleCreateCategory()" [formGroup]="formCreateCategory">
+    <ion-item>
+      <!-- <ion-icon name="mail-outline" class="ion-margin-end"></ion-icon> -->
+      <ion-input formControlName="name" name="usernmae" type="text" placeholder="camisa, pantalon..."></ion-input>
+    </ion-item>
+    <div class="ion-margin-top">
+      <ion-button 
+        expand="block" 
+        fill="solid"
+        type="submit"
+      >
+        Crear categoria
+      </ion-button>
+    </div>
+  </form>
+</ion-content>
